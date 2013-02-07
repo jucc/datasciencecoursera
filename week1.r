@@ -33,7 +33,18 @@ round(pdf,2)
 
 ### SAMPLE FROM GENERATED FUNCTIONS
 
-sample(heights, size=10, replace=FALSE)#removes elem from list after picking it (no repeat)
 sample(heights, size=10, replace=TRUE) #does not remove elem from list after picking it (repeat)
+sample(heights, size=10, replace=FALSE)#removes elem from list after picking it (no repeat)
 probs <- c(0.5,0.5,0,0,0,0,0,0,0,0) #50% chance for each of the first two, never the others
 sample(heights, size=10, replace=TRUE, probs)
+
+pop <- 1:10
+
+#convenience sample
+probs <- c(5,5,5,5,5,1,1,1,1,1)/30
+sample(pop, size=4, replace=FALSE,prob=probs)
+
+#randomized trial
+treat1 <- sample(1:5, size=3, replace=FALSE)
+treat2 <- sample(6:10, size=3, replace=FALSE)
+c(treat1, treat2)
