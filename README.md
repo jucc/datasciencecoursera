@@ -1,4 +1,4 @@
 data_analysis_coursera
 ======================
 
-Scripts for lectures and exercises from the course Introduction to Data Analysis, from coursera.org, taught by professor Jeffrey Leek
+My scripts for lectures and exercises from Johns Hopkins specialization on Data Science at coursera.org, taught by professors Jeffrey Leek, Roger Peng and Brian Caffo.
