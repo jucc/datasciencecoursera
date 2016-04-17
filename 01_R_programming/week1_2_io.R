@@ -5,14 +5,16 @@
 #Juliana Cavalcanti Correa - 01/13 - review 04/16
 
 
+#reads the first lines to figure out the type of columns
+initial <- read.table("/home/ju/workspace/pdf_table/rank2012", nrows=100)
+
+#figures out the classes with a few lines
+classes <- sapply(initial, FUN=class)
+
 #read.table and read.csv differ by default separator: comma or space
 #do not use them if dataset is so large that does not fit RAM
 #set comment.char="" if there are no comments (helps performance)
-
 df <- read.table("/home/ju/workspace/pdf_table/rank2012", skip=8, sep=":", comment.char='')
-
-#figures out the classes with a few lines
-classes <- sapply(df, FUN=class)
 
 
 #textual formats store metadata, but lose readability
@@ -23,7 +25,8 @@ classes <- sapply(df, FUN=class)
 w <- data.frame(a=1:5, b=c("a","b","c","d","e"))
 dput(w) #structure stores all metadata about df, etc
 dput(w, file="dput.R") 
-r <- dget("write.R") 
+r <- dget("dput.R") 
+r
 
 #dump can be used to store and reconstruct multiple R objects
 
@@ -34,7 +37,7 @@ ls()
 source("dump.R")
 w
 
-# connections can be used to navigate files
+# connections can be used to navigate urls  and files (file, bzfile or gzfile)
 
 con <- file("/home/ju/workspace/pdf_table/rank2012")
 df <- readLines(con, 15)
